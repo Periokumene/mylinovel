@@ -1,0 +1,25 @@
+{
+    "name": "book_name",
+    "volumes":[
+        {
+            "volume_name": "volume_name",
+            "front_page": "url",
+            "chapters": [
+                {
+                    "title": "chapter_name",
+                    "url": "url"
+                }
+            ]
+        },
+        {
+            "volume_name": "volume_name",
+            "front_page": "url",
+            "chapters": [
+                {
+                    "title": "chapter_name",
+                    "url": "url"
+                }
+            ]
+        }
+    ]
+}
