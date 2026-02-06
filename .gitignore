@@ -214,10 +214,20 @@ __marimo__/
 data/
 # 但保留目录结构，方便创建
 !data/.gitkeep
+!data/books/.gitkeep
+!data/chapters/.gitkeep
 
 # EPUB输出目录
 output/
 !output/.gitkeep
+
+# 测试数据目录（保留测试用的HTML文件，但忽略生成的内容）
+# test_catalog/ 和 test_loaddiff/ 中的测试文件可以保留
+# 但忽略临时生成的文件
+test_catalog/*.html.bak
+test_loaddiff/*.html.bak
+test_catalog/*.tmp
+test_loaddiff/*.tmp
 
 # 调试和测试脚本（可选，如果这些是临时文件）
 # debug_html.py
@@ -233,13 +243,25 @@ logs/
 *.swp
 *.swo
 *~
+*.bak
+*.backup
+*.orig
 
-# Selenium相关（如果以后使用）
+# Selenium页面源码保存（调试用，通常不需要提交）
+*_selenium_page.html
+*_raw.html
+*_raw_*.html
+
+# Selenium相关
 geckodriver.log
 chromedriver.log
 *.crash
+chromedriver
+geckodriver
+msedgedriver
 
-# 浏览器驱动缓存（webdriver-manager）
+# 浏览器驱动缓存（webdriver-manager自动下载的驱动）
+.wdm/
 .driver_cache/
 
 # 爬虫会话数据（如果需要保存）
@@ -269,3 +291,87 @@ Desktop.ini
 
 # Cursor特定（如果不想提交）
 .cursor/
+.cursorindexingignore
+
+# 项目特定的临时文件和调试文件
+empty.html
+debug_*.py
+test_*.py.bak
+*_test.log
+/tmp/
+/temp/
+
+# 章节解析器保存的HTML调试文件
+data/chapters/*/*_raw*.html
+data/chapters/*/*_selenium*.html
+
+# 书籍目录页HTML副本（通常很大，不需要提交）
+data/books/*_catalog.html
+
+# 但保留书籍结构JSON文件（如果需要版本控制）
+# 如果不想提交JSON文件，取消下面的注释
+# data/books/*_structure.json
+
+# 章节内容文件（通常很大，不需要提交）
+# 如果需要版本控制章节内容，可以取消下面的注释
+data/chapters/*/*_title.txt
+data/chapters/*/*_content.md
+
+# EPUB输出文件
+output/*.epub
+output/*.mobi
+output/*.azw3
+
+# 测试和示例文件（保留examples/目录中的示例文件，但忽略临时生成的内容）
+examples/*.html.bak
+examples/*.tmp
+
+# 项目文档生成的文件（如果有）
+docs/_build/
+site/
+
+# 性能分析文件
+*.prof
+*.pstats
+*.lprof
+
+# 数据库文件（如果有）
+*.db
+*.sqlite
+*.sqlite3
+
+# 压缩文件（临时下载的）
+*.zip
+*.tar
+*.tar.gz
+*.rar
+!examples/*.zip  # 保留examples中的示例压缩文件（如果有）
+
+# 图片文件（如果下载了封面图片等，通常不需要提交）
+data/books/*.jpg
+data/books/*.png
+data/books/*.gif
+data/books/*.webp
+data/chapters/*/*.jpg
+data/chapters/*/*.png
+data/chapters/*/*.gif
+data/chapters/*/*.webp
+
+# 项目特定的临时文件和调试文件
+empty.html
+debug_*.py
+test_*.py.bak
+*_test.log
+/tmp/
+/temp/
+
+# 章节解析器保存的HTML调试文件
+data/chapters/*/*_raw*.html
+data/chapters/*/*_selenium*.html
+
+# 书籍目录页HTML副本（通常很大，不需要提交）
+data/books/*_catalog.html
+
+# 但保留书籍结构JSON文件（如果需要版本控制）
+# 如果不想提交JSON文件，取消下面的注释
+# data/books/*_structure.json
