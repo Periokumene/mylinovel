@@ -205,3 +205,67 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ============================================
+# 项目特定忽略规则
+# ============================================
+
+# 爬取的数据目录（包含HTML副本、书籍结构JSON、章节内容等）
+data/
+# 但保留目录结构，方便创建
+!data/.gitkeep
+
+# EPUB输出目录
+output/
+!output/.gitkeep
+
+# 调试和测试脚本（可选，如果这些是临时文件）
+# debug_html.py
+# test_catalog_parser.py
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Selenium相关（如果以后使用）
+geckodriver.log
+chromedriver.log
+*.crash
+
+# 浏览器驱动缓存（webdriver-manager）
+.driver_cache/
+
+# 爬虫会话数据（如果需要保存）
+sessions/
+cookies.txt
+
+# 配置文件中的敏感信息（如果有）
+config.local.py
+settings.local.json
+
+# macOS特定
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows特定
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE特定文件（如果之前被注释了，现在明确启用）
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Cursor特定（如果不想提交）
+.cursor/
